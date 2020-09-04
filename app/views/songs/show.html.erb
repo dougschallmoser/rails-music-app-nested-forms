@@ -1,0 +1,15 @@
+<h1><%= @song.title %></h1>
+
+<h3>Artist: <%= link_to @song.artist.name, artist_path(@song.artist) if @song.artist %></h3>
+<h3>Genre: <%= link_to @song.genre.name, genre_path(@song.genre) if @song.genre %></h3>
+<h3>Notes:
+    <ul>
+        <% @song.notes.each do |note| %>
+            <li><%= note.content %></li>
+        <% end %>
+    </ul>
+</h3>
+
+<%= button_to "Edit Song", edit_song_path(@song), method: :get %>
+<br>
+<%= button_to "Delete Song", song_path(@song), method: :delete %>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsMusicApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <nav>
+      <%= link_to_unless_current 'Home', root_path %>   |
+      <%= link_to 'All Genres', genres_path %>   |
+      <%= link_to 'All Artists', artists_path %>   |
+      <%= link_to 'Create Song', new_song_path %>
+    </nav>
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
