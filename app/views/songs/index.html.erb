@@ -1,8 +1,17 @@
 <h1>All Songs</h1>
 
 <%= form_tag songs_path, method: 'get' do %>
-    <%= text_field_tag :query, nil, placeholder: 'Enter song name' %>
+    Search for a song:
+    <%= text_field_tag :query %>
     <%= submit_tag 'Search' %>
+<% end %>
+
+<br>
+
+<%= form_tag songs_path, method: 'get' do %>
+    Filter by genre:
+    <%= collection_select :song, :genre_id, Genre.all, :id, :name, include_blank: true %>
+    <%= submit_tag 'Filter' %>
 <% end %>
 
 <ul>

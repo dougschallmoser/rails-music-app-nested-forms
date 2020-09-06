@@ -1,7 +1,8 @@
 <h1>All Artists</h1>
 
 <%= form_tag artists_path, method: 'get' do %>
-    <%= text_field_tag :query, nil, placeholder: 'Enter artist name' %>
+    Search for an artist:
+    <%= text_field_tag :query %>
     <%= submit_tag 'Search' %>
 <% end %>
 

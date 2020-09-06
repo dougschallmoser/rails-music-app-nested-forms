@@ -11,9 +11,9 @@
   <header>
     <nav>
       <%= link_to_unless_current 'Home', root_path %>   |
-      <%= link_to 'All Genres', genres_path %>   |
-      <%= link_to 'All Artists', artists_path %>   |
-      <%= link_to 'Create Song', new_song_path %>
+      <%= link_to_unless_current 'All Genres', genres_path %>   |
+      <%= link_to_unless_current 'All Artists', artists_path %>   |
+      <%= link_to_unless_current 'Create Song', new_song_path %>
     </nav>
   </header>
 

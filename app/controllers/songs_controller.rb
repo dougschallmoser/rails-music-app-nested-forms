@@ -4,6 +4,7 @@ class SongsController < ApplicationController
 
     def index
         @songs = Song.search(params[:query])
+        @songs = Song.filter(params[:song][:genre_id]) if params[:song]
     end
 
     def show

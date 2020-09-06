@@ -19,6 +19,14 @@ class Song < ApplicationRecord
         end
     end
 
+    def self.filter(genre_id)
+        if genre_id.present?
+            self.where("genre_id = ?", "#{genre_id}")
+        else
+            self.all
+        end
+    end
+
     def artist_attributes=(artist_attributes)
         # self.build_artist(artist_attributes) # use this line if not checking for duplicates
         if artist_attributes[:name].present?
