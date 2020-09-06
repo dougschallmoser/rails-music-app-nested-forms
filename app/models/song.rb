@@ -11,6 +11,14 @@ class Song < ApplicationRecord
     # accepts_nested_attributes_for :artist, reject_if: :all_blank # use this line for generic nested attribute writer method
     # accepts_nested_attributes_for :genre, reject_if: :all_blank # use this line for generic nested attribute writer method
 
+    def self.search(query)
+        if query.present?
+            self.where("title LIKE ?", "%#{query}%")
+        else
+            self.all
+        end
+    end
+
     def artist_attributes=(artist_attributes)
         # self.build_artist(artist_attributes) # use this line if not checking for duplicates
         if artist_attributes[:name].present?

@@ -1,5 +1,10 @@
 <h1>All Artists</h1>
 
+<%= form_tag artists_path, method: 'get' do %>
+    <%= text_field_tag :query, nil, placeholder: 'Enter artist name' %>
+    <%= submit_tag 'Search' %>
+<% end %>
+
 <ul>
     <% @artists.each do |artist| %>
         <li><%= link_to artist.name, artist_path(artist) %></li>
