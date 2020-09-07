@@ -18,9 +18,9 @@
     <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: true %>
     <br>
 
-    <%= f.fields_for :genre do |genre| %><br>
+    <%= f.fields_for :genre do |g| %><br>
         Or enter in a new genre name:
-        <%= genre.text_field :name %>
+        <%= g.text_field :name %>
     <% end %>
     <br>
 
@@ -29,16 +29,16 @@
     <%= f.collection_select :artist_id, Artist.all, :id, :name, include_blank: true %>
     <br>
     
-    <%= f.fields_for :artist do |artist| %><br>
+    <%= f.fields_for :artist do |a| %><br>
         Or enter in a new artist name:
-        <%= artist.text_field :name %>
+        <%= a.text_field :name %>
     <% end %>
     <br>
 
     <h4>Add Notes</h4>
     <%= f.label 'Note:' %>
-    <%= f.fields_for :notes do |note| %><br> 
-        <%= note.text_field :content %>
+    <%= f.fields_for :notes do |n| %><br> 
+        <%= n.text_field :content %>
     <% end %>
     
     <br>
